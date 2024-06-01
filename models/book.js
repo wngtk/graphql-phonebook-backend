@@ -24,4 +24,5 @@ const schema = new mongoose.Schema({
 
 schema.plugin(uniqueValidator)
 
-module.exports = mongoose.model('Book', schema)
+const Book = mongoose.model('Book', schema)
+module.exports = Book
