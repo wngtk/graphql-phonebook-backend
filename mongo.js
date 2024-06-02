@@ -90,6 +90,7 @@ mongoose.connect(process.env.MONGODB_URI)
     await Author.insertMany(
       authors.map(a => {
         delete a.id
+        a.bookCount = 0
         return a
       })
     )
@@ -100,6 +101,8 @@ mongoose.connect(process.env.MONGODB_URI)
       const author = await Author.findOne({ name: book.author })
       book.author = author._id
       await new Book(book).save()
+      author.bookCount += 1
+      await author.save()
     }
 
     mongoose.connection.close()
