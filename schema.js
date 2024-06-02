@@ -25,6 +25,10 @@ const typeDefs = `
     id: ID!
   }
 
+  type Subscription {
+    bookAdded: Book!
+  }
+
   type Query {
     bookCount: Int!
     authorCount: Int!
