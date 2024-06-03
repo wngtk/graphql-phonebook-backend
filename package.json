@@ -26,6 +26,7 @@
     "ws": "^8.17.0"
   },
   "devDependencies": {
+    "@types/mongoose": "^5.11.97",
     "nodemon": "^3.1.2"
   }
 }
